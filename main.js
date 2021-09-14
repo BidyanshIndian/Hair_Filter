@@ -1,8 +1,8 @@
-hair_y = 0;
-hair_x = 0;
+mask_y = 0;
+mask_x = 0;
 
 function preload(){
-    hair = loadImage("https://i.postimg.cc/JzB859ty/hair.png")
+    Mask = loadImage("https://i.postimg.cc/W4ffZFxt/Screenshot-2021-09-14-at-12-36-21-PM.png")
 }
 function setup(){
     canvas = createCanvas(300,300);
@@ -22,8 +22,8 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length>0){
     console.log(results);
-    hair_x = results[0].pose.nose.x-160;
-    hair_y = results[0].pose.nose.y-213;
+    mask_x = results[0].pose.nose.x-160;
+    mask_y = results[0].pose.nose.y-213;
     console.log("hair x - "+ hair_x);
     console.log("hair y - "+ hair_y);
     }
@@ -32,7 +32,7 @@ function gotPoses(results){
 
 function draw(){
    image(video,0,0,300,300);
-   image(hair,hair_x,hair_y,300,400)
+   image(mask,mask_x,mask_y,300,400)
 }
 
 function take_snapshot(){
